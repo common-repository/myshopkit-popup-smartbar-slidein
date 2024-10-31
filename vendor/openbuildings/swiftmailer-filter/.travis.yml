@@ -1,0 +1,33 @@
+language: php
+
+sudo: false
+
+php:
+  - 7.1
+  - 7.2
+  - 7.3
+
+cache:
+  directories:
+  - $HOME/.composer/cache
+
+notifications:
+  email: false
+  slack:
+    secure: eqn0+sZhXCTpzWJbRG/0J8/nG5u4Tai5vyyCK/yo3sFLPNcGsMDKTy76vV/y/W2hThgyp9FhZErJZbvMzfCUGqDN5MuYV486vtLw08l3VaDqt3QsJzIYxD0aG9V3Y8HSg04nHe+UcRMmw+1BAJSdoo+5ClQX3NW8EexxlUqozn4=
+
+before_install:
+  - composer selfupdate
+
+install:
+  - composer install
+
+before_script:
+  - mkdir -p build/logs
+
+script:
+  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+
+after_script:
+  - test -e build/logs/clover.xml && wget https://scrutinizer-ci.com/ocular.phar
+  - test -e build/logs/clover.xml && php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml

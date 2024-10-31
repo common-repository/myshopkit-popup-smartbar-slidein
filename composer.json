@@ -1,0 +1,33 @@
+{
+  "autoload": {
+    "psr-4": {
+      "MyShopKitPopupSmartBarSlideIn\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MyShopKitPopupSmartBarSlideIn\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "wilokecom/phpcli": "^1.28"
+  },
+  "require": {
+    "testmonitor/activecampaign": "^4.0",
+    "mailchimp/marketing": "*",
+    "klaviyo/php-sdk": "^2.3",
+    "campaignmonitor/createsend-php": "^6.1.0",
+    "getresponse/sdk-php": "^2.0",
+    "webmozart/assert": "^1.10",
+    "phpunit/phpunit": "^7",
+    "wilokecom/wiloke-jwt-sdk": "^1.0",
+    "league/csv": "^9.7",
+    "egulias/email-validator": "^3.1",
+    "php": ">=7.4 <8.0"
+  },
+  "config": {
+    "platform": {
+      "php": "7.4"
+    }
+  }
+}

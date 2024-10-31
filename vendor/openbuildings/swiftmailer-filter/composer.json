@@ -1,0 +1,34 @@
+{
+    "name": "openbuildings/swiftmailer-filter",
+    "description": "Whitelist / Blacklist from domains or emails for email sending",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Ivan Kerin",
+            "email": "ikerin@gmail.com",
+            "role": "Author"
+        }
+    ],
+    "require" : {
+        "php": "^7.1"
+    },
+    "require-dev" : {
+        "swiftmailer/swiftmailer": "^5.0.0",
+        "phpunit/phpunit": "^7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Openbuildings\\Swiftmailer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Openbuildings\\Swiftmailer\\Test\\": "tests/src/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.1.8"
+        }
+    }
+}
